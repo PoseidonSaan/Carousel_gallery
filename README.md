@@ -1,4 +1,4 @@
-#this is the deployment link 
+# this is the deployment link 
 https://poseidonsaan.github.io/Carousel_gallery/
 
 
