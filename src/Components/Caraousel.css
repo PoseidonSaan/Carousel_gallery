@@ -1,0 +1,158 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+img {
+  cursor: pointer;
+}
+.Gallery-view {
+  height: 600px;
+  width: 100vw;
+  padding-bottom: 50px;
+  padding-top: 50px;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.parent-container {
+  display: flex;
+  height: 600px;
+}
+.child-container {
+  height: 100%;
+}
+
+@media (min-width: 1330px) {
+  .main {
+    width: calc(100% - 384px);
+  }
+}
+@media (min-width: 768px) and (max-width: 1330px) {
+  .main {
+    width: calc(100% - 200px + 92px);
+  }
+}
+
+.grid8 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: calc(2 * 184px);
+}
+
+.grid4 {
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 184px;
+  height: 100%;
+}
+
+.grid-item {
+  width: 184px;
+}
+
+@media (max-width: 768px) {
+  .parent-container {
+    /* Align container horizontally in the middle */
+    height: 100vh;
+    padding: 0px;
+    padding-top: 100px;
+    /* Enable scrolling */
+    overflow: hidden;
+    overflow-x: scroll;
+    overscroll-behavior: contain;
+  }
+
+  .main {
+    width: 326px;
+    height: 250px;
+  }
+  .grid2 {
+    /* calulate width, parent - main */
+    width: calc(100% - 326px);
+    height: 250px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+
+    grid-template-rows: 1fr 1fr;
+  }
+
+  .grid-item {
+    height: auto;
+    width: 163px;
+  }
+}
+
+.image-container-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%; /* Adjust the height to your preference */
+  overflow: hidden;
+  padding: 5px;
+}
+
+.image-container-main img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.image-container-side {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%; /* Adjust the height to your preference */
+  overflow: hidden;
+  padding: 5px;
+}
+
+.image-container-side img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.image-container-side {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  pointer-events: none;
+}
+
+.overlay-ext {
+  position: absolute;
+  top: 5%;
+  left: 7.5%;
+  width: 100%;
+  height: 100%;
+  color: black;
+  font-weight: 900;
+  display: flex;
+  justify-content: flex-start; /* Align text to the left */
+  align-items: flex-start; /* Align text to the top */
+  font-size: 16px;
+  pointer-events: none;
+}
+
+.overlay-ext {
+  z-index: 1; /* Add a higher z-index to the overlay to ensure it covers the image */
+}
